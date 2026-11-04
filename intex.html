@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RecoverX | Athlete Rehabilitation</title>
+
+  <style>
+    :root {
+      --bg: #080d18;
+      --card: #111b2c;
+      --text: #f5f7fa;
+      --muted: #9ba9bd;
+      --blue: #2585ff;
+    }
+
+    body.light {
+      --bg: #f3f6fb;
+      --card: #ffffff;
+      --text: #101828;
+      --muted: #58677c;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: 0.3s;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 8%;
+      border-bottom: 1px solid #263247;
+    }
+
+    .logo {
+      font-size: 27px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: var(--blue);
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    button, .nav-link {
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      padding: 11px 16px;
+      font-size: 15px;
+      text-decoration: none;
+    }
+
+    .nav-link {
+      color: var(--text);
+      background: transparent;
+    }
+
+    .primary {
+      background: var(--blue);
+      color: white;
+    }
+
+    #themeButton {
+      background: var(--card);
+      color: var(--text);
+      border: 1px solid #39465b;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 80px 24px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 50px 0 80px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 68px);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--blue);
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.7;
+      max-width: 650px;
+      margin: 0 auto 30px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+      margin-top: 35px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 28px;
+      border-radius: 16px;
+      border: 1px solid #263247;
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 18px;
+      }
+
+      nav {
+        gap: 6px;
+      }
+
+      .nav-link {
+        display: none;
+      }
+
+      main {
+        padding: 40px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">Recover<span>X</span></div>
+
+    <nav>
+      <a class="nav-link" href="#about">About</a>
+      <a class="nav-link" href="#injuries">Injuries</a>
+      <button id="themeButton">☀️ Light mode</button>
+      <button class="primary" onclick="location.href='login.html'">
+        Sign in
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Recover stronger.<br><span>Perform better.</span></h1>
+      <p>
+        Your guide to athletic injury rehabilitation.
+        Explore recovery stages, learn about common injuries,
+        and discover exercises that support your return to sport.
+      </p>
+      <button class="primary" onclick="location.href='injuries.html'">
+        Explore rehabilitation
+      </button>
+    </section>
+
+    <section id="about">
+      <h2>Rehabilitation built for athletes</h2>
+
+      <div class="cards">
+        <article class="card">
+          <h3>Learn</h3>
+          <p>Understand injuries, symptoms, and the recovery process.</p>
+        </article>
+
+        <article class="card">
+          <h3>Rebuild</h3>
+          <p>Explore progressive rehabilitation exercises and movement.</p>
+        </article>
+
+        <article class="card">
+          <h3>Return</h3>
+          <p>Learn about the steps toward safely returning to sport.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="injuries" style="margin-top: 70px;">
+      <h2>Explore common injuries</h2>
+
+      <div class="cards">
+        <article class="card">
+          <h3>ACL</h3>
+          <p>Learn about knee ligament injuries and rehabilitation.</p>
+        </article>
+
+        <article class="card">
+          <h3>MCL</h3>
+          <p>Understand medial knee ligament injuries and recovery.</p>
+        </article>
+
+        <article class="card">
+          <h3>Achilles</h3>
+          <p>Explore Achilles tendon injuries and recovery stages.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    RecoverX · Rehabilitate. Recover. Perform.
+  </footer>
+
+  <script>
+    const themeButton = document.getElementById("themeButton");
+
+    themeButton.addEventListener("click", () => {
+      document.body.classList.toggle("light");
+
+      themeButton.textContent =
+        document.body.classList.contains("light")
+          ? "🌙 Dark mode"
+          : "☀️ Light mode";
+    });
+  </script>
+</body>
+</html>
